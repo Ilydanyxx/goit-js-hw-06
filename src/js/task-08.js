@@ -1,17 +1,17 @@
-const button = document.querySelector("button");
-const a = document.querySelector('input[type="email"]')
-const b = document.querySelector('input[type="password"]')
+const form = document.querySelector(".login-form")
+
 function submited(event) {
     event.preventDefault()
-    if (a.value === "" || b.value === "") {
+    if (form[0].value.trim() === "" || form[1].value.trim() === "") {
+        return;
         alert("всі поля повинні бути заповнені")
     } else {
         const object = {
         }
-        object.email = a.value;
-        object.password = b.value;
+        object.email = form[0].value;
+        object.password = form[1].value;
         console.log(object)
-        document.querySelector(".login-form").reset()
+        form.reset()
     }
 }
-button.addEventListener("click", submited);
+form.addEventListener("submit", submited);

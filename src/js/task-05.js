@@ -1,11 +1,11 @@
-const a = document.querySelector("input#name-input");
+const input = document.querySelector("input#name-input");
 
-const b = document.querySelector("span#name-output");
+const output = document.querySelector("span#name-output");
 
-a.addEventListener("input", (elem) => {
-    if (elem.currentTarget.value === "") {
-    b.textContent = "Anonymous";
+input.addEventListener("input", (elem) => {
+    if (elem.currentTarget.value.trim() === "") {
+    output.textContent = "Anonymous";
 } else {
-    b.textContent = elem.currentTarget.value;
+    output.textContent = elem.currentTarget.value;
 }
 })
